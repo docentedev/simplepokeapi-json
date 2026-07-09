@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: simplepokeapi-json
+    runtime: node
+    plan: free
+    autoDeploy: true
+    buildCommand: corepack enable && corepack prepare pnpm@10.33.0 --activate && pnpm install --frozen-lockfile
+    startCommand: pnpm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: NPM_CONFIG_STORE_DIR
+        value: /opt/render/.cache/pnpm
