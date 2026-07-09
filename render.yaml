@@ -4,10 +4,8 @@ services:
     runtime: node
     plan: free
     autoDeploy: true
-    buildCommand: corepack enable && corepack prepare pnpm@10.33.0 --activate && pnpm install --frozen-lockfile
-    startCommand: pnpm run start
+    buildCommand: corepack enable && corepack prepare yarn@1.22.22 --activate && yarn install --frozen-lockfile && yarn run build
+    startCommand: yarn run start
     envVars:
       - key: NODE_VERSION
         value: 22
-      - key: NPM_CONFIG_STORE_DIR
-        value: /opt/render/.cache/pnpm

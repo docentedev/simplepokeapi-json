@@ -5,24 +5,24 @@ API CRUD en Node.js para usar desde una app Android.
 - Sin login
 - Persistencia en archivo JSON (`data.json`)
 - Controller con CRUD completo
-- Gestor de paquetes: PNPM
-- Inicio: `pnpm run start`
+- Gestor de paquetes: Yarn
+- Inicio: `yarn run start`
 
 ## Requisitos
 
 - Node.js 18+
-- PNPM instalado globalmente
+- Yarn instalado globalmente
 
 ## Instalacion
 
 ```bash
-pnpm install
+yarn install
 ```
 
 ## Ejecutar
 
 ```bash
-pnpm run start
+yarn run start
 ```
 
 Servidor por defecto: `http://localhost:3000`
@@ -72,9 +72,9 @@ Eliminar:
 curl -X DELETE http://localhost:3000/api/pokemons/1
 ```
 
-## Deploy en Render (PNPM)
+## Deploy en Render (Yarn)
 
-Para este proyecto (Express sin compilacion), no necesitas `pnpm run build`.
+Para este proyecto (Express sin compilacion), no necesitas una etapa de build real, pero se incluye `yarn run build` para compatibilidad de plataforma.
 
 Opciones:
 
@@ -84,15 +84,14 @@ Opciones:
 ### Configuracion manual recomendada
 
 - Runtime: Node
-- Build Command: `corepack enable && corepack prepare pnpm@10.33.0 --activate && pnpm install --frozen-lockfile`
-- Start Command: `pnpm run start`
+- Build Command: `corepack enable && corepack prepare yarn@1.22.22 --activate && yarn install --frozen-lockfile && yarn run build`
+- Start Command: `yarn run start`
 
 Variables de entorno recomendadas:
 
-- `NPM_CONFIG_STORE_DIR=/opt/render/.cache/pnpm`
 - `NODE_VERSION=22`
 
 Notas:
 
-- `pnpm start` y `pnpm run start` funcionan parecido, aqui usamos `pnpm run start` para ser explicito.
+- `yarn start` y `yarn run start` funcionan parecido, aqui usamos `yarn run start` para ser explicito.
 - Como esta API guarda datos en `data.json`, en Render (filesystem efimero) los datos se pueden perder en reinicios o nuevos deploys.

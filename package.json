@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple CRUD API con persistencia en JSON para app Android",
   "main": "src/server.js",
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "yarn@1.22.22",
   "engines": {
     "node": ">=18"
   },
